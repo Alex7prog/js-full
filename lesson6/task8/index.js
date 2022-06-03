@@ -1,25 +1,19 @@
-'use strict';
+// 'use strict';
 
-/**
- * @param {number[]} arr
- * @param {number} delta
- * @return {number[]}
- */
 const increaseEvenEl = (arr, delta) => {
   if (!Array.isArray(arr)) {
     return null;
   }
 
-  const incArr = [];
+  const incArr = [...arr];
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 === 0) {
       incArr[i] = arr[i] + delta;
     }
-
-    console.log(incArr);
-    return incArr;
   }
+
+  return incArr;
 };
 
 // examples
