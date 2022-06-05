@@ -10,9 +10,9 @@ const withdraw = (clients, balances, client, amount) =>
   {
     if (balances[clients.indexOf(client)] > amount) {
       return (balances[clients.indexOf(client)] -= amount);
-    } else {
-      return -1;
     }
+
+    return -1;
   };
 // example 1:
 

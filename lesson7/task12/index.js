@@ -6,3 +6,4 @@ const arrAverage = (arr) =>
     : null;
 
 console.log(arrAverage([2, 5, 6, 3]));
+console.log(arrAverage(2));
