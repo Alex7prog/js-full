@@ -15,11 +15,14 @@
 
 // 2. method .flat() - !!! new method, not all browsers support (check on caniuse.com)
 
-const flatArray = (arr) =>
-  arr
-    .slice()
-    .flat()
-    .sort((a, b) => a - b);
+// const flatArray = (arr) =>
+//   arr
+//     .slice()
+//     .flat()
+//     .sort((a, b) => a - b);
+
+//2 variant
+const flatArray = (arr) => [...arr].flat().sort((a, b) => a - b);
 
 const arr = [1, [2, 3], 18, 24, [5, 33, 7, 11]];
 console.log(flatArray(arr));
