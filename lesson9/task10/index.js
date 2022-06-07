@@ -39,17 +39,9 @@ const obj4 = {
   age: 17,
 };
 
-// compareObjects(obj1, obj2); // ==> false
-// console.log('compareObjects(obj1, obj2): ', compareObjects(obj1, obj2));
-// compareObjects(obj2, obj3); // ==> false
-// console.log('compareObjects(obj2, obj3): ', compareObjects(obj2, obj3));
-// compareObjects(obj1, obj4); // ==> true
+compareObjects(obj1, obj2); // ==> false
+console.log('compareObjects(obj1, obj2): ', compareObjects(obj1, obj2));
+compareObjects(obj2, obj3); // ==> false
+console.log('compareObjects(obj2, obj3): ', compareObjects(obj2, obj3));
+compareObjects(obj1, obj4); // ==> true
 console.log('compareObjects(obj1, obj4): ', compareObjects(obj1, obj4));
-// console.log(
-//   Object.keys(obj3)
-//     .sort()
-//     .reduce(function (result, key) {
-//       result[key] = obj3[key];
-//       return result;
-//     }, {})
-// );
