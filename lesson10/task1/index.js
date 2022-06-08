@@ -12,6 +12,7 @@ const getNaNV2 = (numArr) => numArr.filter((num) => isNaN(num));
 const getIntegers = (numArr) => numArr.filter((num) => Number.isInteger(num));
 
 const arr = [
+  0,
   1,
   '2',
   3.54,
