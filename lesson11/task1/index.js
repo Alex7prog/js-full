@@ -1,5 +1,4 @@
 // split text
-
 const splitText = (text, len = 10) => {
   if (typeof text !== 'string') {
     return null;
