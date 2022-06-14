@@ -19,7 +19,6 @@ module.exports = {
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'prefer-template': 0,
-    'prettier/prettier': ['error', { singleQute: true, parser: 'flow' }],
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'prettier/prettier': ['error', { singleQuote: true, parser: 'flow' }],
   },
 };
