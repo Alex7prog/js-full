@@ -1,5 +1,4 @@
-// unit test
-// syntax:
+// unit test - syntax:
 // it('', () => {
 //
 // });
