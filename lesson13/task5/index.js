@@ -14,11 +14,12 @@ export const withdraw = (clients, balances, client, amount) =>
   balances[clients.indexOf(client)] > amount ? (balances[clients.indexOf(client)] -= amount) : -1;
 
 // for a question to the mentor:
-// {
-// if (balances[clients.indexOf(client)] > amount) {
-//   return (balances[clients.indexOf(client)] -= amount);
-// }
-// return -1;
+// function withdraw(clients, balances, client, amount) {
+//   if (balances[clients.indexOf(client)] < amount) {
+//     return -1;
+//   }
+
+//   balances[clients.indexOf(client)] -= amount;
 // }
 
 export const getAdults = users => {
