@@ -4,7 +4,7 @@
 // in: none
 // out: none, <.categories>.innerHTML = ''
 
-const clearList = function () {
+export const clearList = function () {
   document.querySelector('.categories').innerHTML = '';
 };
 
