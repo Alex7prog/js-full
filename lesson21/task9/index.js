@@ -20,7 +20,7 @@ export const finishList = function () {
   elemList.lastElementChild.innerText = '8';
 };
 
-finishList();
+// finishList();
 
 //  console.log(document.querySelector('.list'));
 
