@@ -7,25 +7,25 @@
 export const finishList = function () {
   const elemList = document.querySelector('.list');
   const elemListItemSpecial = document.querySelector('.special');
-  let elemItem = document.createElement('li');
+  let elemListNewItem = document.createElement('li');
 
-  elemList.prepend(elemItem);
-  elemItem.innerText = '1';
+  elemListNewItem.textContent = '1';
+  elemList.prepend(elemListNewItem);
 
-  elemItem = document.createElement('li');
-  elemListItemSpecial.before(elemItem);
-  elemItem.innerText = '4';
+  elemListNewItem = document.createElement('li');
+  elemListNewItem.textContent = '4';
+  elemListItemSpecial.before(elemListNewItem);
 
-  elemItem = document.createElement('li');
-  elemListItemSpecial.after(elemItem);
-  elemItem.innerText = '6';
+  elemListNewItem = document.createElement('li');
+  elemListNewItem.textContent = '6';
+  elemListItemSpecial.after(elemListNewItem);
 
-  elemItem = document.createElement('li');
-  elemList.append(elemItem);
-  elemItem.innerText = '8';
+  elemListNewItem = document.createElement('li');
+  elemListNewItem.textContent = '8';
+  elemList.append(elemListNewItem);
 };
 
-finishList();
+// finishList();
 
 // elemList.prepend(document.createElement('li'));
 // elemList.firstElementChild.innerText = '1';
