@@ -3,13 +3,18 @@
 export const getTitleElement = function () {
   const titleElem = document.querySelector('.title');
   console.dir(titleElem);
+
+  return titleElem;
 };
 
 export const getInputElement = function () {
   const inputElem = document.querySelector('[type="text"]');
-  console.log(inputElem);
+  console.dir(inputElem);
+
+  return inputElem;
 };
 
 // test data
-getTitleElement();
-getInputElement();
+
+console.log('getTitleElement(): ', getTitleElement());
+console.log('getInputElement(): ', getInputElement());
