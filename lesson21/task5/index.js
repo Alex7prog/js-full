@@ -1,6 +1,6 @@
 // DOM - update text content
 
-// setTitle
+// setTitle()
 // input: string, text
 // output: none, <.title>text<>
 
@@ -9,6 +9,9 @@ export const setTitle = function (text = '') {
   titleElem.textContent = text;
 };
 
+setTitle('I am one оf the best Front-End developers');
+
 // test data
 
-setTitle('I am one оf the best Front-End developers');
+const titleElem = document.querySelector('.title');
+console.log(titleElem.textContent);
