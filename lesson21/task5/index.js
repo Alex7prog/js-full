@@ -4,7 +4,7 @@
 // input: string, text
 // output: none, <.title>text<>
 
-export const setTitle = function (text) {
+export const setTitle = function (text = '') {
   const titleElem = document.querySelector('.title');
   titleElem.textContent = text;
 };
