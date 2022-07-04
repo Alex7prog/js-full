@@ -8,4 +8,4 @@ const clearList = function () {
   document.querySelector('.categories').innerHTML = '';
 };
 
-clearList();
+// clearList();
