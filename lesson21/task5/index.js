@@ -9,9 +9,9 @@ export const setTitle = function (text = '') {
   titleElem.textContent = text;
 };
 
-setTitle('I am one оf the best Front-End developers');
+// setTitle('I am one оf the best Front-End developers');
 
 // test data
 
-const titleElem = document.querySelector('.title');
-console.log(titleElem.textContent);
+// const titleElem = document.querySelector('.title');
+// console.log(titleElem.textContent);
