@@ -7,20 +7,36 @@
 export const finishList = function () {
   const elemList = document.querySelector('.list');
   const elemListItemSpecial = document.querySelector('.special');
+  let elemItem = document.createElement('li');
 
-  elemList.prepend(document.createElement('li'));
-  elemList.firstElementChild.innerText = '1';
+  elemList.prepend(elemItem);
+  elemItem.innerText = '1';
 
-  elemListItemSpecial.before(document.createElement('li'));
-  elemListItemSpecial.previousElementSibling.innerText = '4';
-  elemListItemSpecial.after(document.createElement('li'));
-  elemListItemSpecial.nextElementSibling.innerText = '6';
+  elemItem = document.createElement('li');
+  elemListItemSpecial.before(elemItem);
+  elemItem.innerText = '4';
 
-  elemList.append(document.createElement('li'));
-  elemList.lastElementChild.innerText = '8';
+  elemItem = document.createElement('li');
+  elemListItemSpecial.after(elemItem);
+  elemItem.innerText = '6';
+
+  elemItem = document.createElement('li');
+  elemList.append(elemItem);
+  elemItem.innerText = '8';
 };
 
-// finishList();
+finishList();
+
+// elemList.prepend(document.createElement('li'));
+// elemList.firstElementChild.innerText = '1';
+
+// elemListItemSpecial.before(document.createElement('li'));
+// elemListItemSpecial.previousElementSibling.innerText = '4';
+// elemListItemSpecial.after(document.createElement('li'));
+// elemListItemSpecial.nextElementSibling.innerText = '6';
+
+// elemList.append(document.createElement('li'));
+// elemList.lastElementChild.innerText = '8';
 
 //  console.log(document.querySelector('.list'));
 
