@@ -1,8 +1,8 @@
 // Dom data-attributes
 
 // export squaredNumber(number)
-// in: number
-// out: number
+// in: none / get data-attributes
+// out: none / set data-attributes
 
 export const squaredNumbers = function () {
   const elemList = document.querySelector('.list');
