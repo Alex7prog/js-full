@@ -1,4 +1,4 @@
-// events bubling and capturing
+// events bubbling and capturing
 
 const divElem = document.querySelector('.rect_div');
 const pElem = document.querySelector('.rect_p');
@@ -23,7 +23,6 @@ const logGreyP = logTarget.bind(null, 'P', 'grey');
 const logGreySpan = logTarget.bind(null, 'SPAN', 'grey');
 
 const clearEventsList = () => {
-  console.log('btnClear');
   eventsListElem.innerHTML = '';
 };
 
