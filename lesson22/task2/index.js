@@ -3,7 +3,7 @@
 const btnCreate = document.querySelector('.create-btn');
 
 const alertDone = () => {
-  alert('Done');
+  alert('done');
 };
 
 btnCreate.addEventListener('click', alertDone);
