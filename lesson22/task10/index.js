@@ -12,7 +12,7 @@ elemButtonsPagination[2].addEventListener('click', handlePagBtnClick);
 
 // option 2 (best)
 
-// const elemButtonsPagination = document.querySelector('.pagination_page');
+// const elemButtonsPagination = document.querySelector('.pagination');
 
 // const handleClick = function (event) {
 //   if (event.target.classList.contains('pagination__page')) {
