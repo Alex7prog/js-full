@@ -7,7 +7,7 @@
 export const squaredNumbers = function () {
   const elemList = document.querySelectorAll('.number');
 
-  elemList.forEach(el => (el.dataset.squaredNumber = el.dataset.number));
+  elemList.forEach(el => (el.dataset.squaredNumber = el.dataset.number ** 2));
 };
 
 squaredNumbers();
