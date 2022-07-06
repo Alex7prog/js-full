@@ -5,11 +5,9 @@
 // out: none / set data-attributes
 
 export const squaredNumbers = function () {
-  const elemList = document.querySelector('.list');
+  const elemList = document.querySelectorAll('.number');
 
-  for (let index = 0; index < elemList.children.length; index += 1) {
-    elemList.children[index].dataset.squaredNumber = elemList.children[index].dataset.number ** 2;
-  }
+  elemList.forEach(el => (el.dataset.squaredNumber = el.dataset.number));
 };
 
-// squaredNumbers();
+squaredNumbers();
