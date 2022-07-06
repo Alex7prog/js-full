@@ -8,7 +8,7 @@
 // click btnCreate => input !== '' => add new task
 // render todo list:
 // create <li> according tasks and tasks {text, done, id}
-// set - checkbox.checked, checkbox.dataset.id
+// set - checkbox.checked, checkbox.dataset.id to according tasks.id
 
 const tasks = [
   { text: 'Buy milk', done: false },
