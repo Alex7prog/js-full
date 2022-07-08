@@ -1,7 +1,7 @@
 // compose
 
 // compose():
-// in: (...funcsArg) / out: function/number
+// in: (...funcsArg) / out: number (result of expressions func args)
 
 export const compose =
   (...funcs) =>
