@@ -11,9 +11,10 @@ export const triple = mult(3);
 // test-data
 
 const result = mult(2);
-console.log('result: ', mult(2)); // numTwo => numOne * numTwo
-console.log('result: ', mult(2, 5)); // numTwo => numOne * numTwo
-console.log('result: ', mult(2)(5)); // 10
+console.log(mult(2)); // numTwo => numOne * numTwo
+console.log(mult(2, 5)); // numTwo => numOne * numTwo
+console.log(mult(2)(5)); // 10
 
-console.log('result: ', twice(9)); // 18
-console.log('result: ', triple(9)); // 27
+console.log(twice); // numTwo => numOne * numTwo
+console.log(twice(9)); // 18
+console.log(triple(9)); // 27
