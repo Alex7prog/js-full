@@ -1,6 +1,6 @@
 // calc (chaining)
 
-// i: number / u: {methods}
+// in: number / out: {methods}
 
 export const calc = value => {
   let result = value;
@@ -31,5 +31,6 @@ export const calc = value => {
 };
 
 // test-data
+
 const result = calc(3).add(2).mult(4).div(10).subtract(5).result();
 console.log('result: ', result);
