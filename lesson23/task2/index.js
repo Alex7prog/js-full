@@ -1,52 +1,34 @@
 // Event delegation
 
+const renderElem = function (classElem, amountElem) {
+  const arrElem = [...new Array(amountElem)].map((sector, num) => {
+    const elem = document.createElement('div');
+    elem.classList.add(classElem);
+    elem.dataset.number = num + 1;
+
+    return elem;
+  });
+
+  return arrElem;
+};
+
 const arenaElem = document.querySelector('.arena');
-const boardSelectedSeatElem = document.querySelector('.board__selected-seat');
-
-const sectorArr = [...new Array(3)].map((sector, num) => {
-  const sectorElem = document.createElement('div');
-  sectorElem.classList.add('sector');
-  sectorElem.dataset.sectorNumber = num + 1;
-
-  return sectorElem;
-});
-
-const renderLineElem = function () {
-  const lineArr = [...new Array(10)].map((line, num) => {
-    const lineElem = document.createElement('div');
-    lineElem.classList.add('sector__line');
-    lineElem.dataset.lineNumber = num + 1;
-
-    return lineElem;
-  });
-
-  return lineArr;
-};
-const renderSeatElem = function () {
-  const seatArr = [...new Array(10)].map((sector, num) => {
-    const seatElem = document.createElement('div');
-    seatElem.classList.add('sector__seat');
-    seatElem.dataset.seatNumber = num + 1;
-
-    return seatElem;
-  });
-  return seatArr;
-};
-
-arenaElem.append(...sectorArr);
+arenaElem.append(...renderElem('sector', 3));
 
 const sectorElem = document.querySelectorAll('.sector');
-sectorElem.forEach(el => el.append(...renderLineElem()));
+sectorElem.forEach(el => el.append(...renderElem('sector__line', 10)));
 
 const lineElem = document.querySelectorAll('.sector__line');
-lineElem.forEach(el => el.append(...renderSeatElem()));
+lineElem.forEach(el => el.append(...renderElem('sector__seat', 10)));
 
 const handleSeatPosition = function (event) {
-  const target = event.target;
+  const { target } = event;
+  const boardSelectedSeatElem = document.querySelector('.board__selected-seat');
+
   if (target.classList.contains('sector__seat')) {
-    boardSelectedSeatElem.textContent = `S ${target.closest('.sector').dataset.sectorNumber} - L ${
-      target.closest('.sector__line').dataset.lineNumber
-    } - S ${target.dataset.seatNumber}`;
+    boardSelectedSeatElem.textContent = `S ${target.closest('.sector').dataset.number} - L ${
+      target.closest('.sector__line').dataset.number
+    } - S ${target.dataset.number}`;
   }
 };
 
