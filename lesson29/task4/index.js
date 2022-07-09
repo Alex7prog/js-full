@@ -1,7 +1,7 @@
 // Function for call delay
 
 export const delay = (delay, callback, context, ...arg) => {
-  setTimeout(callback.bind(context, arg), delay);
+  setTimeout(callback.bind(context, ...arg), delay);
 };
 
 const func = (...arg) => console.log(`callback function arguments: ${arg}`);
