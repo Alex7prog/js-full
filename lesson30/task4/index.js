@@ -1,6 +1,6 @@
 // Promisification
 
-import { addImage } from './solution/addImage.js';
+import { addImage } from './addImage.js';
 
 export const addImageV2 = url => {
   const promise = new Promise((resolveImgLoad, rejectImgLoad) => {
