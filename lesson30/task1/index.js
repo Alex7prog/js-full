@@ -1,5 +1,8 @@
 // Promise - first step (load image)
 
+// addImage()
+// in: url / out: promise
+
 export const addImage = imgSrc => {
   const promiseAddImage = new Promise((resolveImgLoad, rejectImgLoad) => {
     const imgElem = document.createElement('img');
