@@ -8,7 +8,7 @@ export const asyncCalculator = numbr =>
       num =>
         new Promise(resolve => {
           setTimeout(() => {
-            console.log(`initialValue: ${num}`);
+            console.log(`Initial value: ${num}`);
             resolve(num);
           }, 500);
         }),
