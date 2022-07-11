@@ -3,7 +3,7 @@
 // getUserASAP()
 // in: string (userId) // out: Promise
 
-const servers = ['https:/server.com/us', 'https:/server.com/eu', 'https:/server.com/au'];
+const servers = ['https://server.com/us', 'https://server.com/eu', 'https://server.com/au'];
 
 const getRandom = (from, to) => from + Math.random() * (to - from);
 
