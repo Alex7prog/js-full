@@ -9,12 +9,14 @@ const promiseNumber3 = Promise.resolve(8);
  * чтобы в консоль вывелась сумма всех чисел из трех промисов
  */
 
+const arrayFromPromisesValue = (...arg) => {
+  const arr = [];
+  [...arg].map(pr => pr.then(num => arr.push(num)));
+  return arr;
+};
+
 export const resultPromise = new Promise(resolve => {
-  const numArr = [];
-
-  [promiseNumber1, promiseNumber2, promiseNumber3].map(pr => pr.then(num => numArr.push(num)));
-
-  resolve(numArr);
+  resolve(arrayFromPromisesValue(promiseNumber1, promiseNumber2, promiseNumber3));
 });
 
 resultPromise
