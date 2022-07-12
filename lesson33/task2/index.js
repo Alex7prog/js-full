@@ -7,10 +7,10 @@ export function getTasksList() {
 }
 
 export function getTaskById(taskId) {
-  return fetch(`${baseUrl}?id=${taskId}`).then(response => response.json());
+  return fetch(`${baseUrl}/${taskId}`).then(response => response.json());
 }
 
-// examples
+// examples;
 // getTasksList().then(tasksList => {
 //   console.log(tasksList); // ==> [ {'id':'1', 'isDone':false ... }, {'id':'2', 'isDone':false ... }, ...]
 // });
