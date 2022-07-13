@@ -41,14 +41,10 @@ const onFormSubmit = event => {
 
   sendUserData(formData)
     .then(response => {
-      // alert(response.body);
-
       return response.json();
-
-      // alert(`status: ${response.status}, statusText: ${response.statusText}`);
     })
     .then(result => {
-      alert(result);
+      alert(JSON.stringify(result));
       clearFormData();
     });
 };
