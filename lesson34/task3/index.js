@@ -40,7 +40,7 @@ const onFormSubmit = event => {
   const formData = Object.fromEntries(new FormData(userFormElem));
 
   sendUserData(formData).then(response => {
-    alert(response);
+    alert(response.body);
     // alert(`status: ${response.status}, statusText: ${response.statusText}`);
     clearFormData();
   });
