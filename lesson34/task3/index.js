@@ -39,11 +39,18 @@ const onFormSubmit = event => {
 
   const formData = Object.fromEntries(new FormData(userFormElem));
 
-  sendUserData(formData).then(response => {
-    alert(response.body);
-    // alert(`status: ${response.status}, statusText: ${response.statusText}`);
-    clearFormData();
-  });
+  sendUserData(formData)
+    .then(response => {
+      // alert(response.body);
+
+      return response.json();
+
+      // alert(`status: ${response.status}, statusText: ${response.statusText}`);
+    })
+    .then(result => {
+      alert(result);
+      clearFormData();
+    });
 };
 
 emailUserElem.addEventListener('input', onValidateInput);
