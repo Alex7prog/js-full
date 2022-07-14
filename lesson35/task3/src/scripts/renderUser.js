@@ -9,7 +9,7 @@ export const renderUserData = ({ avatar_url, name, location }) => {
     userAvatarElem.src = avatar_url;
   }
   userNameElem.textContent = name;
-  userLocationElem.textContent = location;
+  userLocationElem.textContent = `from ${location}`;
 };
 
 export const renderUserRepos = userRepos => {
