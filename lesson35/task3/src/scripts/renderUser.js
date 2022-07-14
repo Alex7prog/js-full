@@ -1,4 +1,4 @@
-import { createRepoListItem } from './createRepoList';
+import { createRepoListItem } from './createRepoList.js';
 
 export const renderUserData = ({ avatar_url, name, location }) => {
   const userNameElem = document.querySelector('.user__name');

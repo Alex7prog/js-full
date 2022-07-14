@@ -20,11 +20,9 @@ export const onUserSearch = () => {
   }
 
   const userName = userNameInputElem.value;
-  console.log('userNameInputElem: ', userNameInputElem);
   userNameInputElem.value = '';
 
   showSpinner(true);
-  setTimeout(() => {}, 5000);
   requestUserData(userName)
     .then(userData => {
       showSpinner(false);
