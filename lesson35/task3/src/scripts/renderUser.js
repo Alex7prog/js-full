@@ -5,7 +5,9 @@ export const renderUserData = ({ avatar_url, name, location }) => {
   const userLocationElem = document.querySelector('.user__location');
   const userAvatarElem = document.querySelector('.user__avatar');
 
+  // eslint-disable-next-line camelcase
   if (avatar_url) {
+    // eslint-disable-next-line camelcase
     userAvatarElem.src = avatar_url;
   }
   userNameElem.textContent = name;
