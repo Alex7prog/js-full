@@ -1,7 +1,7 @@
 // List of user Github repositories
 
-import { initHandlers } from './handlers.js';
-import { init } from './init.js';
+import { initHandlers } from './src/scripts/handlers.js';
+import { init } from './src/scripts/init.js';
 
 // Algo:
 // 1. Init default page
