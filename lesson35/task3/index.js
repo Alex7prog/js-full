@@ -1,7 +1,7 @@
 // List of user Github repositories
 
 import { initHandlers } from './src/scripts/handlers.js';
-import { init } from './src/scripts/init.js';
+import { initDefaultUser } from './src/scripts/defaultUser.js';
 
 // Algo:
 // 1. Init default page
@@ -14,5 +14,5 @@ import { init } from './src/scripts/init.js';
 // 8. Render user repo on page
 // 9. if error alert with message & Hidden spinner
 
-init();
+initDefaultUser();
 initHandlers();

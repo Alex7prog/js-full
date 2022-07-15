@@ -1,24 +1,33 @@
-import { createRepoListItem } from './createRepoList.js';
-
+/* eslint-disable camelcase */
 export const renderUserData = ({ avatar_url, name, location }) => {
+  const userAvatarElem = document.querySelector('.user__avatar');
   const userNameElem = document.querySelector('.user__name');
   const userLocationElem = document.querySelector('.user__location');
-  const userAvatarElem = document.querySelector('.user__avatar');
 
-  // eslint-disable-next-line camelcase
   if (avatar_url) {
-    // eslint-disable-next-line camelcase
     userAvatarElem.src = avatar_url;
   }
   userNameElem.textContent = name;
-  userLocationElem.textContent = `from ${location}`;
+  userLocationElem.textContent = location ? `from ${location}` : '';
 };
 
-export const renderUserRepos = userRepos => {
-  const userRepoList = document.querySelector('.repo-list');
-  userRepoList.innerHTML = '';
+export const createRepoListItem = name => {
+  const repoListItem = document.createElement('li');
+  repoListItem.classList.add('repo-list__item');
+  repoListItem.textContent = name;
 
-  const repoList = userRepos.map(createRepoListItem);
+  return repoListItem;
+};
 
-  userRepoList.append(...repoList);
+const userRepoListElem = document.querySelector('.repo-list');
+
+export const cleanRepoListHTML = () => {
+  userRepoListElem.innerHTML = '';
+};
+
+export const renderUserRepos = userReposArr => {
+  const repoListItemsElems = userReposArr.map(({ name }) => createRepoListItem(name));
+
+  cleanRepoListHTML();
+  userRepoListElem.append(...repoListItemsElems);
 };
