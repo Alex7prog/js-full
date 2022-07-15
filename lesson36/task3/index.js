@@ -5,12 +5,14 @@ const baseUrl = 'https://api.github.com/users';
 
 export const getUsersBlogs = async users => {
   const prUsersBlogLink = await Promise.all(
-    users.map(user =>
-      fetch(`${baseUrl}/${user}`)
+    users.map(user => {
+      const responseUserBlog = fetch(`${baseUrl}/${user}`)
         .then(responseUser => responseUser.json())
-        .then(userData => Promise.resolve(userData.blog))
-        .catch(error => new Error(error)),
-    ),
+        .then(userData => userData.blog)
+        .catch(error => new Error(error));
+
+      return Promise.resolve(responseUserBlog);
+    }),
   );
   return prUsersBlogLink;
 };
