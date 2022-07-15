@@ -6,12 +6,15 @@ const baseUrl = 'https://api.github.com/users';
 export const getUsersBlogs = async users => {
   const prUsersBlogLink = await Promise.all(
     users.map(user => {
-      const responseUserBlog = fetch(`${baseUrl}/${user}`)
-        .then(responseUser => responseUser.json())
-        .then(userData => userData.blog)
-        .catch(error => new Error(error));
+      try {
+        const responseUserBlog = fetch(`${baseUrl}/${user}`)
+          .then(responseUser => responseUser.json())
+          .then(userData => Promise.resolve(userData.blog));
 
-      return Promise.resolve(responseUserBlog);
+        return responseUserBlog;
+      } catch (error) {
+        throw new Error('Failed to fetch user');
+      }
     }),
   );
   return prUsersBlogLink;
