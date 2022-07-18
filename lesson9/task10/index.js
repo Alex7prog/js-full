@@ -30,9 +30,11 @@
 // option 2
 const compareObjects = (obj1, obj2) => {
   const keysObj1 = Object.keys(obj1);
-  return keysObj1.length !== Object.keys(obj2).length
-    ? false
-    : !keysObj1.some(key => obj1[key] !== obj2[key]);
+  if (keysObj1.length !== Object.keys(obj2).length) {
+    return false;
+  }
+
+  return !keysObj1.some(key => obj1[key] !== obj2[key]);
 };
 
 // Live code
