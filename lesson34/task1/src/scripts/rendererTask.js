@@ -4,11 +4,13 @@ const compareTasks = (a, b) => {
   return a.done - b.done || new Date(a.createDate) - new Date(b.createDate);
 };
 
-const createCheckBox = ({ done, id }) => {
+const createCheckBox = ({ done }) => {
   const checkboxElem = document.createElement('input');
   checkboxElem.setAttribute('type', 'checkbox');
   checkboxElem.checked = done;
   checkboxElem.classList.add('list-item__checkbox');
+  console.log('checkboxElem: ', checkboxElem);
+  console.log('checkboxElem: ', checkboxElem.outerHTML);
 
   return checkboxElem;
 };
@@ -17,7 +19,7 @@ const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement('li');
   listItemElem.classList.add('list-item', 'list__item');
 
-  const checkboxElem = createCheckBox({ done, id });
+  const checkboxElem = createCheckBox({ done });
 
   if (done) {
     listItemElem.classList.add('list-item_done');
@@ -33,6 +35,7 @@ const createListItem = ({ text, done, id }) => {
   listItemElem.dataset.id = id;
   listItemElem.append(checkboxElem, textElem, deleteBtnElem);
 
+  console.log('listItemElem: ', listItemElem);
   return listItemElem;
 };
 
