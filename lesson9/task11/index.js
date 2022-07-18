@@ -1,7 +1,5 @@
 // Object to user array
 
-// // Object to user array
-
 // const getCustomersList = obj => {
 //   if (!Object.keys(obj).length) {
 //     return [];
