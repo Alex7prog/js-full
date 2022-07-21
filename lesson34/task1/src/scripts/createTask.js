@@ -21,7 +21,7 @@ export const onCreateTask = () => {
 
   createTask(newTask)
     .then(() => getTasksList())
-    .then(newTasksList => {
+    .then(() => {
       renderTasks();
     });
 };
