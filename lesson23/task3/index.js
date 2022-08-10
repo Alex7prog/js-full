@@ -51,33 +51,40 @@ const renderTasks = tasksList => {
 };
 
 const tasksAddId = function () {
-  tasks.map((taskObj, id) => (taskObj.id = id));
+  tasks.map((task, index) => (task.id = index));
+  // tasks.map((task, index) => ({ ...task, id: index }));
 };
 
 tasksAddId();
 renderTasks(tasks);
 
-const handlerTodoElem = function (event) {
-  const target = event.target;
+const handleToggleTask = e => {
+  const { target } = e;
+  const isCheckbox = target.classList.contains('list__item-checkbox');
 
-  if (target.classList.contains('list__item-checkbox')) {
-    tasks.find(el => String(el.id) === String(target.dataset.id)).done = target.checked;
-    renderTasks(tasks);
+  if (!isCheckbox) {
+    return;
   }
 
-  if (target.classList.contains('create-task-btn')) {
-    if (inputTaskElem.value.length) {
-      tasks.push({ text: inputTaskElem.value, done: false });
-      inputTaskElem.value = '';
-      tasksAddId();
-      renderTasks(tasks);
-    }
-  }
+  tasks.find(task => String(task.id) === String(target.dataset.id)).done = target.checked;
+  renderTasks(tasks);
 };
 
-TodoElem.addEventListener('click', handlerTodoElem);
+const handleCreateTask = () => {
+  const inputValue = inputTaskElem.value;
 
-// due to the condition of the task, delegation is not fully
-// added unnecessary handlerbtnCreateTaskElem
+  if (!inputValue) {
+    return;
+  }
 
-btnCreateTaskElem.addEventListener('click', handlerTodoElem);
+  tasks.push({
+    text: inputValue,
+    done: false,
+  });
+  inputTaskElem.value = '';
+  tasksAddId();
+  renderTasks(tasks);
+};
+
+listElem.addEventListener('click', handleToggleTask);
+btnCreateTaskElem.addEventListener('click', handleCreateTask);
