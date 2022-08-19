@@ -16,6 +16,11 @@ function sendUserData(userData) {
       'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
+  }).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(`POST: ${response.status}`);
   });
 }
 
@@ -40,17 +45,18 @@ const onFormSubmit = event => {
   const formData = Object.fromEntries(new FormData(userFormElem));
 
   sendUserData(formData)
-    .then(response => {
-      return response.json();
-    })
     .then(result => {
       alert(JSON.stringify(result));
       clearFormData();
+    })
+    .catch(err => {
+      alert(err);
     });
 };
 
-emailUserElem.addEventListener('input', onValidateInput);
-nameUserElem.addEventListener('input', onValidateInput);
-passwordUserElem.addEventListener('input', onValidateInput);
+// emailUserElem.addEventListener('input', onValidateInput);
+// nameUserElem.addEventListener('input', onValidateInput);
+// passwordUserElem.addEventListener('input', onValidateInput);
+userFormElem.addEventListener('input', onValidateInput);
 
 userFormElem.addEventListener('submit', onFormSubmit);
